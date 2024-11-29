@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ajolotes perdidos</title>
+        <link rel="stylesheet" href="./res/css/style.css" />
+        <link rel="icon" href="./res/img/icono.png">
+        <style>
+           #soundButton, #skipButton {
+                position: absolute;
+                bottom: 20px;
+                font-size: 16px;
+                color: white;
+                background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                z-index: 10; /* Asegura que estén encima del video */
+                transition: background-color 0.3s ease;
+            }
+
+            #skipButton2 {
+                position: absolute;
+                bottom: 20px;
+                font-size: 16px;
+                color: white;
+                background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                z-index: 10; /* Asegura que estén encima del video */
+                transition: background-color 0.3s ease;
+            }
+
+            #levelVideo {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 999; /* Asegúrate de que el video esté sobre el canvas */
+            }
+
+
+            /* Botón de activar sonido */
+            #soundButton {
+                left: 20px; /* Alineación a la izquierda */
+            }
+
+            /* Botón de omitir */
+            #skipButton {
+                right: 20px; /* Alineación a la derecha */
+            }
+
+            /* Efecto hover para los botones */
+            #soundButton:hover, #skipButton:hover {
+                background-color: rgba(255, 255, 255, 0.9);
+                color: black;
+            }
+
+            #intro {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 2;
+            }
+
+            #introVideo {
+                max-width: 100%;
+                max-height: 100%;
+            }
+
+            #menu {
+                display: none; /* Oculto inicialmente */
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 1;
+            }
+
+        </style>
+    </head>
+    <body>
+        <!-- Contenedor para la secuencia de introducción -->
+        <div id="intro">
+            <video id="introVideo" autoplay muted playsinline>
+                <source src="./res/video/1124.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
+            <button id="soundButton">Activar sonido</button>
+            <button id="skipButton">Omitir</button>
+        </div>
+
+        <div id="menu" style="display: none;">
+            <!-- Aquí iría el menú principal -->
+        </div>
+
+              
+        
+<center>
+        <!-- Menú principal que se muestra después de la intro -->
+        <div id="menu">
+            <canvas id="canvas"></canvas>
+        </div>
+    </center>
+    <div>
+        <video id="levelVideo" style="display: none;" autoplay controls playsinline>
+            <source id="videoSource" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+    </div>
+     
+        <!-- JavaScript principal -->
+        <script src="./res/js/main.js" type="module"></script>
+        <script src="./res/js/intro.js" type="module"></script>
+ <!-- Archivo JavaScript adicional para la secuencia -->
+    </body>
+</html>
