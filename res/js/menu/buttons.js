@@ -149,7 +149,7 @@ function drawSavedTimesMenu() {
     ctx.fillText(fullText, canvas.width * 0.23, canvas.height * 0.1);
 
     const savedTimes = getSavedTimes();
-    
+
     if (savedTimes.length > 0) {
         let yPosition = canvas.height * 0.2; // Iniciar en una posición vertical
 
@@ -213,7 +213,7 @@ const newButton = new MenuButton({
     fontSize: 40, // Tamaño de la fuente
     runCode: () => {
         drawSavedTimesMenu();
-        console.log("¡Nuevo botón presionado!"); // Acción del botón
+         // Acción del botón
     },
 });
 
@@ -242,7 +242,7 @@ let menuButtons = {
             width: 300,
             height: canvas.height * 0.1,
             yOffset: canvas.height * 0.4,
-            text: "retry",
+            text: "Reintentar",
             runCode: () => {
                 setEndGame(true);
             },

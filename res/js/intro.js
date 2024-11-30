@@ -24,4 +24,4 @@ introVideo.addEventListener("ended", () => {
     document.getElementById("intro").style.display = "none"; // Oculta la introducción
     document.getElementById("menu").style.display = "block"; // Muestra el menú principal
     startGame(); // Inicia el juego
-});
+}); 

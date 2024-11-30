@@ -31,10 +31,10 @@ const menusTexts = {
         ctx.font = "120px Cinzel";
         ctx.lineWidth = 7;
         ctx.strokeStyle = "black";
-        ctx.strokeText("Game Over", canvas.width * 0.25, menuBg.position.y + canvas.height * 0.25);
+        ctx.strokeText("Perdiste", canvas.width * 0.25, menuBg.position.y + canvas.height * 0.25);
 
         ctx.fillStyle = "yellow";
-        ctx.fillText("Game Over", canvas.width * 0.25, menuBg.position.y + canvas.height * 0.25);
+        ctx.fillText("Perdiste", canvas.width * 0.25, menuBg.position.y + canvas.height * 0.25);
     },
     paused: () => {
         ctx.font = "120px Cinzel";
@@ -90,8 +90,6 @@ function drawInGameMenu(name, transform) {
 
     menuBg.position.y -= transform;
 }
-
-let isSavedTimesMenu = false;
 
 function drawMenu() {
 

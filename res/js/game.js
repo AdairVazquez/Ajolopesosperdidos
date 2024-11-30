@@ -542,8 +542,13 @@ function playGame() {
                 levelTime.minutes = formatedTime.minutes;
                 levelTime.seconds = formatedTime.seconds;
 
-                // Concatenar los minutos y segundos en formato "minuto:segundo"
-                const timeString = `${levelTime.minutes}:${levelTime.seconds}`;
+                const fecha = new Date();
+
+                // Formatear la fecha en formato dd/MM/YY
+                const formattedDate = `${fecha.getDate().toString().padStart(2, '0')}/${(fecha.getMonth() + 1).toString().padStart(2, '0')}/${fecha.getFullYear().toString().slice(-2)}`;
+                
+                // Concatenar el string con el nivel y el tiempo
+                const timeString = `Nivel ${currentLevel}: Tiempo ${levelTime.minutes}:${levelTime.seconds} Fecha: ${formattedDate}`;
 
                 // Obtener los tiempos guardados desde el localStorage
                 let savedTimes = getSavedTimes();
